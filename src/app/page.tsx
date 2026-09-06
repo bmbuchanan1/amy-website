@@ -122,7 +122,7 @@ export default function Home() {
       <nav className="nav">
         <div className="nav-inner">
           <a href="#home">
-            <img src="/logo.jpg" alt="The Holding Space" className="nav-logo" />
+            <img src={`${process.env.__NEXT_PUBLIC_BASEPATH || ''}/logo.jpg`} alt="The Holding Space" className="nav-logo" />
           </a>
           <button
             className="nav-toggle"
@@ -158,7 +158,7 @@ export default function Home() {
         <div className="hero-leaf-bg" />
         <div className="hero-content">
           <img
-            src="/logo.jpg"
+            src={`${process.env.__NEXT_PUBLIC_BASEPATH || ''}/logo.jpg`}
             alt="The Holding Space logo"
             className="hero-logo"
           />
@@ -182,7 +182,7 @@ export default function Home() {
         <section className="section" id="about">
           <div className="about-grid">
             <img
-              src="/amy.jpg"
+              src={`${process.env.__NEXT_PUBLIC_BASEPATH || ''}/amy.jpg`}
               alt="Amy Ryan, counsellor"
               className="about-photo"
             />

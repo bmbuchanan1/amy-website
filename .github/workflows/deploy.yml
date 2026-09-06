@@ -1,9 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch: # Enables the manual trigger button
   push:
     branches: [main]
-
+  
 permissions:
   contents: read
   pages: write

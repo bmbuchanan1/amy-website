@@ -22,6 +22,7 @@ import {
   HandHeart,
   CalendarCheck,
 } from "lucide-react";
+import Image from "next/image";
 
 function WaveDivider({ from, to, variant }: { from: string; to: string; variant?: 2 }) {
   const d = variant === 2
@@ -157,8 +158,8 @@ export default function Home() {
       <section className="hero" id="home">
         <div className="hero-leaf-bg" />
         <div className="hero-content">
-          <img
-            src={`${process.env.__NEXT_PUBLIC_BASEPATH || ''}/logo.jpg`}
+          <Image
+            src={`/logo.jpg`}
             alt="The Holding Space logo"
             className="hero-logo"
           />

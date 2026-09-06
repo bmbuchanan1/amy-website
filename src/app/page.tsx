@@ -88,18 +88,29 @@ const services = [
 ];
 
 const testimonials = [
-  {
-    quote: "Client testimonial coming soon.",
-    name: "— Client name",
+   {
+    quote: "Thank you for making me feel safe.",
+    name: "— Anonymous",
+  },
+ {
+    quote: "Amy has really helped me through the toughest of times. She’s been a big part of my recovery and has really been there. Thank you so much for everything.",
+    name: "— Anonymous",
+  },
+   {
+    quote: "In sessions with Amy, I have never felt rushed or judged or pressured. She has allowed me to go always at my own pace and I think that’s why I’ve really been able to commit this time.",
+    name: "— Anonymous",
   },
   {
-    quote: "Client testimonial coming soon.",
-    name: "— Client name",
+    quote: "I really had an amazing and eye-opening process with Amy. She listened to me and allowed me to be myself, speak my mind, and made me feel very heard, seen and understood. She also challenged me to grow and pursue the goals I set for myself in this counselling process.",
+    name: "— Anonymous",
   },
-  {
-    quote: "Client testimonial coming soon.",
-    name: "— Client name",
+   {
+    quote: "I've seen a few counsellors over the years, qualified psychologists, Christian therapists, church counsellors. Honestly, none have been near as helpful as Amy was, in terms of listening, understanding, encouraging, suggesting practical steps to healing and sharing knowledge. I never felt judged sharing my deepest thoughts and secrets. I feel I've come a long way from where I was, even if my journey is not complete. Honestly, I was a little nervous going in, but this was as positive an experience as I could have imagined.",
+    name: "— Anonymous",
   },
+  
+ 
+ 
 ];
 
 export default function Home() {
@@ -310,7 +321,7 @@ export default function Home() {
               <div className="testimonial-card" key={i}>
                 <Quote className="testimonial-quote-icon" />
                 <p>&ldquo;{t.quote}&rdquo;</p>
-                <cite>{t.name}</cite>
+                {/* <cite>{t.name}</cite> */}
               </div>
             ))}
           </div>

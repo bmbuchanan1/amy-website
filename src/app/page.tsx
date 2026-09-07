@@ -190,7 +190,7 @@ export default function Home() {
             <div className="about-text">
               <h3>Meet Amy</h3>
               <p>
-                I&rsquo;m Amy Ryan, a specialist wellness counsellor registered
+                I&rsquo;m Amy Ryan, a specialist wellness counsellor listed
                 with the Association for Supportive Counsellors and Holistic
                 Practitioners (ASCHP). I believe that everyone deserves a space
                 where they can feel truly heard — without judgement, without
@@ -216,7 +216,7 @@ export default function Home() {
                   </li>
                   <li>
                     <Leaf className="qual-icon" />
-                    Registered with ASCHP
+                    Listed with ASCHP
                   </li>
                 </ul>
               </div>

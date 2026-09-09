@@ -1,7 +1,49 @@
 import React from "react";
+import type { Metadata } from "next";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blogs";
 import Link from "next/link";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    };
+  }
+
+  const keywords = ["counselling", "wellness", "mental health"];
+  if (post.category) {
+    keywords.push(post.category);
+  }
+
+  return {
+    title: `${post.title} | The Holding Space`,
+    description: post.excerpt,
+    keywords,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Amy Ryan"],
+      tags: post.category ? [post.category] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
 
 function renderInlineMarkdown(text: string): React.ReactNode {
   const parts: React.ReactNode[] = [];
@@ -53,12 +95,6 @@ export function generateStaticParams() {
   }));
 }
 
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getBlogPost(slug);
@@ -90,8 +126,43 @@ export default async function BlogPostPage({ params }: PageProps) {
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
+  // JSON-LD schema for Article
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: `${process.env.__NEXT_PUBLIC_BASEPATH || ""}/logo.jpg`,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Amy Ryan",
+      url: `${process.env.__NEXT_PUBLIC_BASEPATH || ""}/`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Holding Space",
+      logo: {
+        "@type": "ImageObject",
+        url: `${process.env.__NEXT_PUBLIC_BASEPATH || ""}/logo.jpg`,
+      },
+    },
+  };
+
+  const baseUrl = process.env.__NEXT_PUBLIC_BASEPATH || "";
+  const canonicalUrl = `${baseUrl}/blog/${post.slug}`;
+
   return (
     <div className="blog-post-page">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
+
       {/* Navigation */}
       <nav className="blog-nav">
         <Link href="/blog" className="blog-nav-back">

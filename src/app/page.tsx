@@ -22,7 +22,6 @@ import {
   HandHeart,
   CalendarCheck,
 } from "lucide-react";
-import Image from "next/image";
 
 function WaveDivider({ from, to, variant }: { from: string; to: string; variant?: 2 }) {
   const d = variant === 2
@@ -148,6 +147,9 @@ export default function Home() {
               <a href="#testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a>
             </li>
             <li>
+              <a href="/blog" onClick={() => setMenuOpen(false)}>Blog</a>
+            </li>
+            <li>
               <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
             </li>
           </ul>
@@ -158,7 +160,7 @@ export default function Home() {
       <section className="hero" id="home">
         <div className="hero-leaf-bg" />
         <div className="hero-content">
-          <Image
+          <img
             src={`/logo.jpg`}
             alt="The Holding Space logo"
             className="hero-logo"
@@ -190,11 +192,11 @@ export default function Home() {
             <div className="about-text">
               <h3>Meet Amy</h3>
               <p>
-                I&rsquo;m Amy Ryan, a specialist wellness counsellor listed
-                with the Association for Supportive Counsellors and Holistic
-                Practitioners (ASCHP). I believe that everyone deserves a space
-                where they can feel truly heard — without judgement, without
-                pressure, and without pretence.
+                Hi, I&rsquo;m Amy Ryan, a listed Specialist Wellness Counsellor (ASCHP). 
+                I am committed to creating a safe space where you can share freely, knowing you will be listened to without judgement and met with genuine kindness. 
+                I aim to foster a counselling relationship built on trust, evidence-informed practice,empathy and respect, where you can safely explore your thoughts, feelings and experiences. 
+                Through the counselling process, my hope is that you develop a deeper understanding of yourself, build mental resilience, nurture your holistic wellbeing, feel empowered with practical tools to navigate everyday life, and create sustainable, positive growth.
+               
               </p>
               <p>
                 My approach is grounded in empathy, warmth, and
@@ -212,11 +214,15 @@ export default function Home() {
                   </li>
                   <li>
                     <Leaf className="qual-icon" />
+                    BA Social Dynamics
+                  </li>
+                  <li>
+                    <Leaf className="qual-icon" />
                     Humanitas Counselling Course
                   </li>
                   <li>
                     <Leaf className="qual-icon" />
-                    Listed with ASCHP
+                    ASCHP Membership Registration Number: 13416
                   </li>
                 </ul>
               </div>
@@ -264,14 +270,12 @@ export default function Home() {
           </div>
           <div className="philosophy-content">
             <blockquote>
-              &ldquo;Healing happens in the space between being truly heard and
-              finding the courage to move forward.&rdquo;
+              &ldquo;Being able to feel safe with other people is probably the single most important aspect of mental health; safe connections are fundamental to meaningful and satisfying lives.&rdquo;
             </blockquote>
             <p>
-              I work from a person-centred, integrative framework — drawing on
-              various therapeutic approaches to create a plan that fits{" "}
-              <em>you</em>, not the other way around. Sessions are built on
-              trust, empathy, and unconditional positive regard.
+              I work from a person-centred, integrative framework where you are 
+              positioned as the expert in your own life - together we will create a plan that fits <em>you.</em>
+           
             </p>
             <p>
               My goal is never to tell you what to do, but to help you uncover
@@ -352,7 +356,7 @@ export default function Home() {
               className="btn btn-filled btn-lg"
             >
               <CalendarCheck size={20} />
-              Book a Session
+              Book a free 15 minute consultation
             </a>
           </div>
 
@@ -378,7 +382,8 @@ export default function Home() {
                 <MapPin className="contact-detail-icon" />
                 <div className="contact-detail-text">
                   <strong>Location</strong>
-                  <span>TICA Longevity Hub, 1 Valdean Rd, St Helier, Hillcrest, 3610</span>
+                  {/* <span>TICA Longevity Hub, 1 Valdean Rd, St Helier, Hillcrest, 3610</span> */}
+                  <span>Online</span>
                 </div>
               </div>
               <div className="contact-detail">

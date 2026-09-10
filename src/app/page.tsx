@@ -116,20 +116,15 @@ const testimonials = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
+  const getMailtoLink = () => {
+    const nameInput = (document.querySelector('input[name="name"]') as HTMLInputElement)?.value || "";
+    // const emailInput = (document.querySelector('input[name="email"]') as HTMLInputElement)?.value || "";
+    const messageInput = (document.querySelector('textarea[name="message"]') as HTMLTextAreaElement)?.value || "";
 
     const subject = "Counselling Enquiry";
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const body = `Hi Amy,\n\n ${messageInput} \n\nKind regards\n${nameInput}`;
 
-    const mailtoUrl = `mailto:amy@theholding-space.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoUrl;
+    return `mailto:amy@theholding-space.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -410,21 +405,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <form
-              className="contact-form"
-              onSubmit={handleContactSubmit}
-            >
+            <form className="contact-form">
               <input type="text" name="name" placeholder="Your name" required />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                required
-              />
               <textarea name="message" placeholder="Your message" required />
-              <button type="submit" className="btn btn-filled">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = getMailtoLink();
+                }}
+                className="btn btn-filled"
+              >
                 Send Message
-              </button>
+              </a>
             </form>
           </div>
         </section>

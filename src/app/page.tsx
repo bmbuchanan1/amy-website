@@ -116,6 +116,22 @@ const testimonials = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    const subject = "Counselling Enquiry";
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    const mailtoUrl = `mailto:amy@theholding-space.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <>
       {/* NAV */}
@@ -366,8 +382,8 @@ export default function Home() {
                 <Mail className="contact-detail-icon" />
                 <div className="contact-detail-text">
                   <strong>Email</strong>
-                  <a href="mailto:amythecounsellor@gmail.com?subject=Counselling%20Enquiry&body=Hi%20Amy%2C%0A%0AI%20would%20like%20to%20enquire%20about%20booking%20a%20counselling%20session.%0A%0AKind%20regards">
-                    amythecounsellor@gmail.com
+                  <a href="mailto:amy@theholding-space.co.za?subject=Counselling%20Enquiry&body=Hi%20Amy%2C%0A%0AI%20would%20like%20to%20enquire%20about%20booking%20a%20counselling%20session.%0A%0AKind%20regards">
+                    amy@theholding-space.co.za
                   </a>
                 </div>
               </div>
@@ -396,9 +412,7 @@ export default function Home() {
             </div>
             <form
               className="contact-form"
-              action="mailto:amythecounsellor@gmail.com"
-              method="POST"
-              encType="text/plain"
+              onSubmit={handleContactSubmit}
             >
               <input type="text" name="name" placeholder="Your name" required />
               <input

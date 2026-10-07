@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "The Holding Space | Specialist Wellness Counselling",
@@ -15,6 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <GoogleAnalytics gaId="G-H5VJ8JE4X7" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
           rel="stylesheet"

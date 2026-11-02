@@ -50,8 +50,8 @@ function renderInlineMarkdown(text: string): React.ReactNode {
   let lastIndex = 0;
   let partIndex = 0;
 
-  // Combined regex to match both [text](url) links and *italic* or _italic_
-  const combinedRegex = /\[([^\]]+)\]\(([^)]+)\)|[*_]([^*_]+)[*_]/g;
+  // Combined regex to match [text](url) links, **bold**, and *italic* or _italic_
+  const combinedRegex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|[*_]([^*_]+)[*_]/g;
   let match;
 
   while ((match = combinedRegex.exec(text)) !== null) {
@@ -70,9 +70,14 @@ function renderInlineMarkdown(text: string): React.ReactNode {
         )
       );
     } else if (match[3]) {
+      // Bold match: **text**
+      parts.push(
+        React.createElement("strong", { key: `bold-${partIndex}` }, match[3])
+      );
+    } else if (match[4]) {
       // Italic match: *text* or _text_
       parts.push(
-        React.createElement("em", { key: `italic-${partIndex}` }, match[3])
+        React.createElement("em", { key: `italic-${partIndex}` }, match[4])
       );
     }
 

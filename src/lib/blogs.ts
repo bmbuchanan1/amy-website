@@ -10,6 +10,59 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+
+  {
+    id: "12",
+    slug: "people-pleasing",
+    title:"People-pleasing and why it’s so hard to say no",
+    date:"2026-10-27",
+    readTime: "4 min read",
+    category: "Self care",
+    excerpt: "People-pleasing refers to the tendency to prioritise the goals and needs of others above and at times at the expense of our own needs. How might people-pleasing manifest in everyday life?",
+    content: `
+People-pleasing refers to the tendency to prioritise the goals and needs of others above and at times at the expense of our own needs. How might people-pleasing manifest in everyday life? Perhaps you find yourself exhausted because you’ve offered to take on so much of your colleague’s work that you’ve left yourself with too little time for your own. Perhaps you’ve committed to a weekly social event that is actually draining your energy but you’re too afraid to excuse yourself from it. Perhaps you’ve found yourself resenting your partner because you’ve gone along with all of their needs without voicing your own.
+
+It begs the question: why do some people struggle so much with saying no? Why is prioritising our own wants and needs sometimes so difficult? And what can we do about it?
+
+### Why do we people-please?
+
+I’m not in the business of telling people why they do the things they do, and I believe that identifying why we people-please requires a personal process of reflection. One person’s reasons may be entirely inapplicable to someone else.
+
+For some, it might be that they are completely out of touch with their own needs and, as a result, haven’t established clear boundaries. For others, they may be terrified of being disliked and feel compelled to avoid giving people any reason not to like them. Others may have learnt that prioritising their own needs is not the way to survive in this world, and that appeasing others is necessary to keep the peace. Perhaps you simply prefer to avoid negative interactions and, as a result, find yourself people-pleasing instead.
+
+This is by no means an exhaustive list of the reasons why people may develop a tendency to people-please.
+
+### What are the consequences of people-pleasing?
+
+People-pleasing can have far-reaching consequences in our lives. It can leave us physically or emotionally exhausted and keep us in environments, relationships and behavioural patterns that no longer serve us. People-pleasing forces us into living inauthentically. 
+
+When speaking about his time working in palliative care, Dr Gabor Maté has described how some patients found their diagnoses quite liberating. They were finally able to be 100% authentically themselves; they felt they had no reason not to be. In doing so, they came to know themselves more fully and experienced what it felt like to truly be themselves.
+
+Maté speaks to the idea that there are two painful options in life: the pain of living inauthentically (through people-pleasing and its knock-on effects), or the pain of living authentically and running the risk of occasional rejection.
+
+### Which pain would you prefer?
+
+Personally, I opt for the pain of living authentically and fully accepting that I will not be everyone’s cup of tea. Much in the same way that not everyone is my cup of tea, and that’s okay.
+
+### How can we move away from people-pleasing and towards living more authentically?
+
+Unlearning people-pleasing tendencies is not easy and may feel uncomfortable at first. That’s not to say it’s impossible! Some of the topics we might explore when working towards overcoming people-pleasing include:
+
+- **Understanding why we people-please:** What purpose does people-pleasing serve in my life? What is its function? Reflecting on where this way of being may have started can help us make sense of how we’ve arrived at where we are today.
+- **Developing an understanding of ourselves:** What are my needs, desires, goals and boundaries?
+- **Becoming more attuned to ourselves:** How can I become more aware of what feels right for me?
+Practising saying no: Can we practise saying no in a way that feels low-risk? Who might be a safe person to practise with?
+
+### Saying no to others and saying yes to yourself
+
+If you’ve begun to notice that your people-pleasing has become self-destructive, all is not lost.
+
+Saying no to others doesn’t mean you have to stop being a good friend, partner or colleague. It simply means that you start saying yes to your own needs, too.
+
+It requires reflection, time and practice, but you have the capacity to understand why you people-please, recognise the impact it has had on your life, and embark on a journey towards living in a way that honours the authentic you.
+
+`
+  },
   {
     id: "1",
     slug: "sleep-hygiene-101",

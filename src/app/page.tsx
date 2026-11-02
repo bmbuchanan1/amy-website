@@ -38,13 +38,13 @@ function WaveDivider({ from, to, variant }: { from: string; to: string; variant?
 
 const serviceIcons: Record<string, React.ReactNode> = {
   "Individual Counselling": <User className="service-icon" />,
-  "Couples Counselling": <Users className="service-icon" />,
+  "Relationships, Boundaries & Behavioural Patterns": <Users className="service-icon" />,
   "Loss & Grief": <Heart className="service-icon" />,
-  "Substance Abuse & Addiction": <FlaskConical className="service-icon" />,
-  "Anxiety & Depression": <Brain className="service-icon" />,
+  "Recovery Support": <FlaskConical className="service-icon" />,
+  "Emotional Wellbeing, Anxiety and Depression Management": <Brain className="service-icon" />,
   "Trauma Counselling": <ShieldCheck className="service-icon" />,
-  "Crisis Management": <Zap className="service-icon" />,
-  "Everyday Life Stresses": <Activity className="service-icon" />,
+  "Self-worth, Identity and Self-Connection": <Zap className="service-icon" />,
+  "Self-Regulation & Coping Skills": <Activity className="service-icon" />,
   "Lifestyle & Sleep Planning": <Moon className="service-icon" />,
 };
 
@@ -54,7 +54,7 @@ const services = [
     desc: "A safe, confidential space to explore your thoughts and feelings, build resilience, and work towards personal growth at your own pace.",
   },
   {
-    title: "Couples Counselling",
+    title: "Relationships, Boundaries & Behavioural Patterns",
     desc: "Strengthen your relationship through improved communication, conflict resolution, and deeper understanding of each other.",
   },
   {
@@ -62,11 +62,11 @@ const services = [
     desc: "Compassionate support to help you navigate the complex emotions of loss and find a path through the grieving process.",
   },
   {
-    title: "Substance Abuse & Addiction",
+    title: "Recovery Support",
     desc: "Non-judgemental guidance to understand the roots of addiction, develop coping strategies, and build a sustainable recovery.",
   },
   {
-    title: "Anxiety & Depression",
+    title: "Emotional Wellbeing, Anxiety and Depression Management",
     desc: "Evidence-based approaches to manage anxiety and depression, helping you regain a sense of control and hope.",
   },
   {
@@ -74,11 +74,11 @@ const services = [
     desc: "Gentle, trauma-informed care to help you process difficult experiences and move forward with strength and self-compassion.",
   },
   {
-    title: "Crisis Management",
+    title: "Self-worth, Identity and Self-Connection",
     desc: "Immediate support during times of acute distress, helping you stabilise and find clarity when you need it most.",
   },
   {
-    title: "Everyday Life Stresses",
+    title: "Self-Regulation & Coping Skills",
     desc: "Practical strategies for managing the pressures of daily life — work, relationships, transitions, and everything in between.",
   },
   {
@@ -373,6 +373,15 @@ export default function Home() {
 
           <div className="contact-grid">
             <div className="contact-info">
+                <div className="contact-detail">
+                <img src="/insta.svg" alt="" className="contact-detail-icon insta-icon" />
+                <div className="contact-detail-text">
+                  <strong>Instagram</strong>
+                  <a href="https://www.instagram.com/amyattheholdingspace/" target="_blank" rel="noopener noreferrer">
+                    @amyattheholdingspace
+                  </a>
+                </div>
+              </div>
               <div className="contact-detail">
                 <Mail className="contact-detail-icon" />
                 <div className="contact-detail-text">
@@ -404,6 +413,7 @@ export default function Home() {
                   <span>Monday – Friday, 9:00 AM – 4:00 PM</span>
                 </div>
               </div>
+            
             </div>
             <form className="contact-form">
               <input type="text" name="name" placeholder="Your name" required />

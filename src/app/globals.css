@@ -678,6 +678,11 @@ a:hover {
   margin-top: 2px;
 }
 
+.insta-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .contact-detail-text strong {
   display: block;
   font-weight: 500;

@@ -3,6 +3,7 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://theholding-space.co.za"),
   title: "Online & In-Person Counselling | The Holding Space",
   description:
     "A warm, safe space to be truly heard. Offering professional counselling online and in-person for trauma, grief, emotional wellbeing, recovery support, relationship challenges, building self-confidence and coping skills.",

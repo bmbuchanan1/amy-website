@@ -1266,3 +1266,188 @@ a:hover {
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }
+
+/* SERVICE PAGES */
+.service-page {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.service-hero {
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.service-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1.25rem;
+}
+
+.service-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.service-lead {
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.service-hero .btn {
+  margin-top: 1rem;
+}
+
+.service-section {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.service-section h2,
+.service-cta h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-section p {
+  color: var(--color-text-light);
+  line-height: 1.75;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  position: relative;
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.service-list a {
+  text-decoration: underline;
+}
+
+.service-cta {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.service-cta p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Whole-card links on the home page: iOS-style spring interactions */
+.service-card-linked {
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --press: cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
+  transition:
+    transform 0.45s var(--spring),
+    box-shadow 0.45s var(--spring),
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover: springs up with a slight overshoot */
+.service-card-linked:hover,
+.service-card-linked:focus-visible {
+  background: var(--color-card-green);
+  border-color: var(--color-accent-light);
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 22px 40px -12px rgba(90, 127, 96, 0.35), 0 4px 12px rgba(90, 127, 96, 0.12);
+}
+
+/* Press: quick squish, like tapping an iOS button */
+.service-card-linked:active {
+  transform: translateY(-2px) scale(0.97);
+  transition-duration: 0.12s;
+  transition-timing-function: var(--press);
+  box-shadow: 0 6px 14px -6px rgba(90, 127, 96, 0.3);
+}
+
+.service-card-linked:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 4px;
+}
+
+.service-card-linked:hover h3 {
+  color: var(--color-accent-hover);
+  transition: color 0.3s ease;
+}
+
+/* Icon pops once on hover */
+@keyframes service-icon-pop {
+  0% { transform: scale(1) rotate(0deg); }
+  35% { transform: scale(1.25) rotate(-8deg); }
+  65% { transform: scale(0.94) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.service-card-linked .service-icon {
+  transition: color 0.3s ease;
+}
+
+.service-card-linked:hover .service-icon {
+  color: var(--color-accent);
+  animation: service-icon-pop 0.6s var(--spring) both;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: gap 0.45s var(--spring), color 0.3s ease;
+}
+
+/* Arrow springs forward on hover */
+.service-card-linked:hover .service-card-link {
+  gap: 0.75rem;
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-linked,
+  .service-card-linked:hover,
+  .service-card-linked:active,
+  .service-card-linked:hover .service-icon,
+  .service-card-link {
+    transition: none;
+    transform: none;
+    animation: none;
+  }
+}

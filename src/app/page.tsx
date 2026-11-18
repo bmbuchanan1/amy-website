@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { services as servicePages } from "@/lib/services";
 import {
   User,
   Users,
@@ -303,13 +305,31 @@ export default function Home() {
             </p>
           </div>
           <div className="services-grid">
-            {services.map((s) => (
-              <div className="service-card" key={s.title}>
-                {serviceIcons[s.title]}
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
-            ))}
+            {services.map((s) => {
+              const page = servicePages.find((p) => p.homeCardTitle === s.title);
+              const content = (
+                <>
+                  {serviceIcons[s.title]}
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  {page && <span className="service-card-link">Learn more &rarr;</span>}
+                </>
+              );
+              return page ? (
+                <Link
+                  href={`/${page.slug}`}
+                  className="service-card service-card-linked"
+                  key={s.title}
+                  aria-label={`${s.title}: learn more`}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div className="service-card" key={s.title}>
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </section>
       </div>

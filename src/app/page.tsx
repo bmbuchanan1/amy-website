@@ -21,6 +21,7 @@ import {
   TrendingUp,
   HandHeart,
   CalendarCheck,
+  Globe,
 } from "lucide-react";
 
 function WaveDivider({ from, to, variant }: { from: string; to: string; variant?: 2 }) {
@@ -55,7 +56,7 @@ const services = [
   },
   {
     title: "Relationships, Boundaries & Behavioural Patterns",
-    desc: "Strengthen your relationship through improved communication, conflict resolution, and deeper understanding of each other.",
+    desc: "Better your understanding of your boundaries, recognise patterns of behaviour that no longer serve you, explore changes you'd like to make to build healthier, more fulfilling relationships with self and others.",
   },
   {
     title: "Loss & Grief",
@@ -75,7 +76,7 @@ const services = [
   },
   {
     title: "Self-worth, Identity and Self-Connection",
-    desc: "Immediate support during times of acute distress, helping you stabilise and find clarity when you need it most.",
+    desc: "Gentle guidance to help you rediscover who you are, rebuild your confidence and deepen your connection to yourself.",
   },
   {
     title: "Self-Regulation & Coping Skills",
@@ -84,6 +85,49 @@ const services = [
   {
     title: "Lifestyle & Sleep Planning",
     desc: "Holistic support for building healthier routines, improving sleep, and creating sustainable lifestyle changes.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Do you accept medical aid?",
+    a: ["No, this is a cash-only practice."],
+  },
+  {
+    q: "Is there a minimum number of sessions?",
+    a: ["There is no prescribed number of sessions. I work in accordance with each client's individual needs, regularly reviewing progress throughout the counselling process to ensure that the support provided remains appropriate and beneficial."],
+  },
+  {
+    q: "How long are sessions?",
+    a: ["Individual counselling sessions last between 45 minutes and one hour."],
+  },
+  {
+    q: "How do online sessions work?",
+    a: ["Online sessions are conducted via Google Meet. You will receive a booking link where you can select a timeslot that suits you. Once booked, a Google Meet link will automatically be generated. There is no need to download any additional apps or software; simply click on the meeting link to join your session."],
+  },
+  {
+    q: "What is the fee structure?",
+    a: [
+      "Fees vary depending on your location (South Africa or international) and whether you choose online or in-person sessions. Please get in touch for further details.",
+      "I offer a discounted package rate for four sessions purchased upfront. I am also open to discussing flexible pricing arrangements for clients experiencing financial constraints, as it is important to me that mental health care remains affordable and accessible.",
+    ],
+  },
+  {
+    q: "What happens in the first session?",
+    a: [
+      "The first session is also known as the intake session. This is where we begin to explore the question: What has brought you to counselling today?",
+      "The focus of this session is on building trust, developing an initial understanding of what you are bringing into the counselling space, and ensuring that you feel comfortable, safe and supported.",
+      "Sometimes, a client may speak for the entirety of their first session, without stopping to take a breath. For those who have a lot to get off their chest, this can be a cathartic experience. Conversely, some clients may not have many words to begin with, in which case I will gently guide the conversation through questions and prompts.",
+      "It is important to remember that you do not need to prepare anything beforehand or know exactly what to say. It is my role to facilitate the session, meet you where you are and support you as you take the first step on your counselling journey.",
+    ],
+  },
+  {
+    q: "What's the difference between a psychologist and a counsellor?",
+    a: [
+      "A key difference lies in their respective scopes of practice. A psychologist is qualified to conduct psychological assessments, make diagnoses and provide psychological treatment for more severe mental health conditions and within their area of registration. A counsellor, depending on their professional designation and scope of practice, provides non-diagnostic support.",
+      "Counselling often involves talking through challenges, active listening, empathic understanding and collaborative problem-solving to help you develop greater insight, identify coping strategies and work towards finding your own solutions.",
+      "If a counsellor believes that a client would benefit from more specialised psychological intervention, or that the challenges they are experiencing fall outside their scope of practice, they will refer the client to a psychologist or another appropriate healthcare professional.",
+    ],
   },
 ];
 
@@ -176,11 +220,12 @@ export default function Home() {
             alt="The Holding Space logo"
             className="hero-logo"
           />
-          <p className="hero-subtitle">Specialist Wellness Counselling</p>
+          <p className="hero-subtitle">Online &amp; In-Person Counselling</p>
           <p>
-            A warm, safe space to be heard. Offering professional online
-            counselling to help you navigate life&rsquo;s challenges with care,
-            compassion, and understanding.
+            A warm, safe space to be truly heard. Offering professional
+            counselling online and in-person for trauma, grief, emotional
+            wellbeing, recovery support, relationship challenges, building
+            self-confidence and coping skills.
           </p>
           <a href="#contact" className="btn btn-filled">
             Get in Touch
@@ -403,7 +448,19 @@ export default function Home() {
                 <div className="contact-detail-text">
                   <strong>Location</strong>
                   {/* <span>TICA Longevity Hub, 1 Valdean Rd, St Helier, Hillcrest, 3610</span> */}
-                  <span>Online</span>
+                  <span>In-person in Hillcrest, KZN &amp; Online</span>
+                </div>
+              </div>
+              <div className="contact-detail">
+                <Globe className="contact-detail-icon" />
+                <div className="contact-detail-text">
+                  <strong>Directory Listings</strong>
+                  <a href="https://www.psychologytoday.com/za/counselling/amy-ryan-hillcrest-nl/931283" target="_blank" rel="noopener noreferrer">
+                    Psychology Today profile
+                  </a>
+                  <a href="https://members.aschp.org.za/member-directory/?member_tab=other&member_search=Amy+ryan&member_city=&member_province=&member_type=" target="_blank" rel="noopener noreferrer">
+                    ASCHP member directory
+                  </a>
                 </div>
               </div>
               <div className="contact-detail">
@@ -429,6 +486,30 @@ export default function Home() {
                 Send Message
               </a>
             </form>
+          </div>
+        </section>
+      </div>
+
+      {/* WAVE: contact → FAQ */}
+      <WaveDivider from="#e6ece6" to="#faf6f1" variant={2} />
+
+      {/* FAQ */}
+      <div className="section-decorated">
+        <div className="hero-leaf-bg" />
+        <section className="section section-above" id="faq">
+          <div className="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <div className="divider" />
+          </div>
+          <div className="faq-list">
+            {faqs.map((f) => (
+              <div className="faq-item" key={f.q}>
+                <h3>{f.q}</h3>
+                {f.a.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
       </div>

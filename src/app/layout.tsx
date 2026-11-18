@@ -3,9 +3,9 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
-  title: "The Holding Space | Specialist Wellness Counselling",
+  title: "Online & In-Person Counselling | The Holding Space",
   description:
-    "Amy Ryan — ASCHP registered specialist wellness counsellor offering individual, couples, trauma, grief and addiction counselling. Online sessions available.",
+    "A warm, safe space to be truly heard. Offering professional counselling online and in-person for trauma, grief, emotional wellbeing, recovery support, relationship challenges, building self-confidence and coping skills.",
 };
 
 export default function RootLayout({

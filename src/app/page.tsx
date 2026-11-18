@@ -222,7 +222,7 @@ export default function Home() {
             alt="The Holding Space logo"
             className="hero-logo"
           />
-          <p className="hero-subtitle">Online &amp; In-Person Counselling</p>
+          <h1 className="hero-subtitle">Online &amp; In-Person Counselling</h1>
           <p>
             A warm, safe space to be truly heard. Offering professional
             counselling online and in-person for trauma, grief, emotional

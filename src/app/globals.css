@@ -208,6 +208,15 @@ a:hover {
   font-weight: 500;
 }
 
+/* Hero subtitle is now an h1 for SEO; keep the subtitle look, not the big hero heading */
+.hero h1.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
 .hero p {
   font-size: 1.05rem;
   color: var(--color-text-light);

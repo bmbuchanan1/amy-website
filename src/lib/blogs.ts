@@ -12,6 +12,54 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
 
   {
+    id: "13",
+    slug: "online-counselling-south-africa-does-it-work",
+    title: "Online Counselling in South Africa: Does It Actually Work?",
+    date: "2026-11-18",
+    readTime: "4 min read",
+    category: "Online Counselling",
+    excerpt: "Is online counselling as effective as sitting in the same room? Amy shares what she has seen from working online, and how to choose between online and in-person sessions.",
+    content: `### Starting out with reservations
+
+Before beginning to offer counselling online, I was somewhat sceptical about its effectiveness. Although I was seeing my own therapist online, the foundation of our therapeutic relationship had been built through in-person sessions. I wondered whether this made a difference and wasn't entirely sure how an entirely online counselling process would play out.
+
+Despite my initial reservations, I began working online and very quickly came to realise that **not only does online counselling work, but it works well**, and for a number of reasons.
+
+### The benefits of online sessions
+
+From the outset, clients have the opportunity to position themselves in an environment where they feel safe and comfortable. Depending on how they're feeling that day, they don't even have to get out of their pyjamas, which can be a real drawcard when you're struggling to leave the house. For clients juggling busy schedules and multiple responsibilities, online sessions also offer a degree of flexibility that can make accessing support much easier. Some of my clients even see me from their cars between work and the school run. Surprisingly, this can work really well, too!
+
+A few important considerations to note:
+
+- **A safe, private space:** clients need to be somewhere they feel safe and comfortable speaking openly.
+- **A stable connection:** a reliable internet connection makes a real difference to how a session flows.
+- **Minimal distractions:** fewer interruptions from the external environment help keep attention on the work.
+
+From a practical perspective, online counselling also eliminates the cost of travelling to a session (thank you, ever-increasing petrol prices!) as well as the time spent getting there and back. It can also make counselling more accessible for people with mobility challenges. Finally, for those who feel uncomfortable about being seen entering a counselling practice or are concerned about the stigma sometimes associated with seeking mental health support, online sessions offer an additional level of privacy.
+
+### Does it work for the counselling itself?
+
+So, while the practical benefits are clear, how does online counselling fare when it comes to the actual counselling work?
+
+My experience has taught me that, provided a client is in a safe and private environment, and I do my part to create a space in which they feel comfortable, heard and supported, **meaningful work can absolutely take place online**. In fact, research suggests that online counselling can be just as effective as in-person counselling for a number of common mental health concerns, including _anxiety and depression_.
+
+### Online or in-person?
+
+Fortunately, I am able to offer clients the choice of online or in-person sessions, provided we are in the same physical location. In-person sessions may be preferable for those who would like to have their counselling in an environment outside of their home, who value having a dedicated 'third space', who feel they would connect more easily in person, or who simply aren't particularly fond of spending more time in front of a screen.
+
+Ultimately, there is no one-size-fits-all approach to counselling. What matters most is finding an approach that feels comfortable, accessible and right for you. Whether online or in person, the most important thing is having a space where you feel safe enough to show up as you are, explore what's going on for you and work towards greater wellbeing.
+
+### Is online counselling right for you?
+
+Curious about whether online counselling might be right for you?
+
+I offer a free 15-minute consultation where we can chat about what brings you to counselling, how the process works and whether we'd be a good fit.
+
+[Book your free 15-minute consultation](https://calendar.app.google/FsXbb4STFdpf571X9). I'd love to hear from you.
+`,
+  },
+
+  {
     id: "12",
     slug: "people-pleasing",
     title:"People-pleasing and why it’s so hard to say no",

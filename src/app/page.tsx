@@ -476,7 +476,7 @@ export default function Home() {
                 <div className="contact-detail-text">
                   <strong>Directory Listings</strong>
                   <a href="https://www.psychologytoday.com/za/counselling/amy-ryan-hillcrest-nl/931283" target="_blank" rel="noopener noreferrer">
-                    Psychology Today profile
+                    Psychology Today profile {" | "}
                   </a>
                   <a href="https://members.aschp.org.za/member-directory/?member_tab=other&member_search=Amy+ryan&member_city=&member_province=&member_type=" target="_blank" rel="noopener noreferrer">
                     ASCHP member directory
